@@ -18,7 +18,7 @@ body{background:#1a1410;color:#c8b89a;font-family:"Noto Serif SC","STSong","SimS
 .container{position:relative;z-index:10;width:92%;max-width:900px;margin:0 auto;height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center}
 
 /* 开场信 */
-#letter-overlay{position:fixed;inset:0;z-index:100;background:#1a1410;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:40px;transition:opacity 2s ease}
+#letter-overlay{position:fixed;inset:0;z-index:100;background:#1a1410;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:40px;transition:opacity 2s ease;overflow-y:auto}
 #letter-overlay.fade{opacity:0;pointer-events:none}
 .letter-paper{background:linear-gradient(180deg,#f5f0e5,#ebe5d5);color:#3a3020;padding:40px 50px;max-width:560px;box-shadow:0 4px 30px rgba(0,0,0,0.5),inset 0 0 60px rgba(200,180,140,0.1);position:relative;border:1px solid #c8b898}
 .letter-paper::before{content:"";position:absolute;top:-3px;left:15px;right:15px;height:3px;background:repeating-linear-gradient(90deg,#a09070 0px,#a09070 10px,transparent 10px,transparent 14px)}
@@ -433,7 +433,7 @@ document.querySelectorAll('.radio-btn').forEach(b=>b.classList.remove('active'))
 event.target.classList.add('active');
 
 if(freq===720){
-content.innerHTML='<p style="color:#c8a868">【中央广播电台 · 新闻播报】</p><p>"据中央社南京电：<span class="bold-clue">教育部近日否认收到青年学者联名请愿书</span>，称相关报道'纯属子虚乌有'。同日，驻南京日本大使馆发言人表示，日本对中国学者'深表尊重'，并否认有关'文化渗透'的传言。"</p><p>"另据报道，上海<span class="bold-clue">东亚文化保护协会</span>今日举行中日文化交流茶会，协会会长<span class="bold-clue">山田诚一</span>致辞表示……"</p>';
+content.innerHTML='<p style="color:#c8a868">【中央广播电台 · 新闻播报】</p><p>\u201c据中央社南京电：<span class="bold-clue">教育部近日否认收到青年学者联名请愿书</span>，称相关报道\u2018纯属子虚乌有\u2019。同日，驻南京日本大使馆发言人表示，日本对中国学者\u2018深表尊重\u2019，并否认有关\u2018文化渗透\u2019的传言。\u201d</p><p>\u201c另据报道，上海<span class="bold-clue">东亚文化保护协会</span>今日举行中日文化交流茶会，协会会长<span class="bold-clue">山田诚一</span>致辞表示……\u201d</p>';
 addClue('收音机广播');
 }else if(freq===1050){
 content.innerHTML='<p style="color:#c8a868">【未知频道 · 断续信号】</p><p>"……滋滋……听到请回答……五号……<span class="bold-clue">墨香阁</span>……滋滋……东西已经转移到……滋滋……方掌柜……滋滋……今晚<span class="bold-clue">亥时</span>（晚上9-11点）……滋滋……"</p><p>信号突然中断，只剩下沙沙的噪音。</p><div class="note">—— 这个频道的信号似乎和墨香阁有关。"方掌柜"是谁？晚上9点到11点会发生什么？</div>';
